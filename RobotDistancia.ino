@@ -1,4 +1,4 @@
-/* *******************************************************************
+ /* *******************************************************************
  *  Planificador de tareas, basado en el trabajo de:
  *  
  *  http://www.jovenescientificos.es/programacion-asincrona-de-arduino/

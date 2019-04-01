@@ -21,7 +21,18 @@
 #ifdef SHIELD_ADAFRUIT
 #include <AFMotor.h>
 #include "ShieldMotor.h"
-#endif
+#endif  
+
+//#define Shield SENA TB6612
+//**************************
+
+
+
+
+
+/************************************************/
+
+
 //*************************************************
 // Tiempos de tareas
 #define Ts1 50      // Periodo de la tarea 1 LED blink
