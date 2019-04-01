@@ -1,15 +1,21 @@
+/*************************************************************
+ * 
+ * tarea de comunicacion
+ * 
+ * No debe llamarse puesto que se usa serial event, en el String s queda 
+ * los datos de las comunicaciones
+ * 
+ **********************************************************/
+
 #pragma once
 
 
 String s = "";    //declaramos variable string de recepcion de datos
-
-
-//
+// Configuracion de la comunicacion para el desarrollo
 void SetupComm() {
   // put your setup code here, to run once:
 Serial.begin(BAUD_RATE);     //Configura velocidad de comunicacion, inicializa puerto
 }
-
 
 
 void serialEvent() 
@@ -22,23 +28,22 @@ void serialEvent()
               c = Serial.read();      //guarda en c lo que tiene el puerto serial
         }
   }
-    if ( s.startsWith("sp="))          //Si la cadena s inicia con "on"
-
+    if ( s.startsWith("sp="))          //Si la cadena s inicia con "sp="
      {
         String Temp = s.substring(3);
         Serial.println(Temp);
         SetPoint=Temp.toInt(); 
 
      }
-    if ( s.startsWith("rc="))         //Si la cadena s inicia con "off"
+    if ( s.startsWith("rc="))         //Si la cadena s inicia con "rc="
     {
       String Temp = s.substring(3);
     //Setpoint=Temp.toInt(); 
    //  digitalWrite(ledPin,LOW);       //pin apaga
     }
 
-    if ( s.startsWith("d?"))           //Si la cadena s inicia con "*"
+    if ( s.startsWith("d?"))           //Si la cadena s inicia con "d?"
     {
-    Serial.println(distancia);           // el pin invierte su estado
+    Serial.println(dist());           // el pin invierte su estado
     }
 }

@@ -14,12 +14,11 @@
  * Shield ESP32         3
  * 
  *******************************************************/
-//#define SHIELD 0
-
-//
-if
+#define SHIELD_ADAFRUIT
+//***********************************
+#ifdef SHIELD_ADAFRUIT
 #include "ShieldMotor.h"
-endif
+#endif
 //*************************************************
 // Tiempos de tareas
 #define Ts1 50      // Periodo de la tarea 1 LED blink
