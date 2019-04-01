@@ -31,8 +31,8 @@ void serialEvent()
     if ( s.startsWith("sp="))          //Si la cadena s inicia con "sp="
      {
         String Temp = s.substring(3);
-        Serial.println(Temp);
-        SetPoint=Temp.toInt(); 
+      //  Serial.println(Temp);
+        Setpoint=Temp.toInt(); 
 
      }
     if ( s.startsWith("rc="))         //Si la cadena s inicia con "rc="

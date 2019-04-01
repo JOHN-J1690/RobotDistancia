@@ -1,3 +1,5 @@
+
+
 /********************************************************
  * Definicion de pines para robot seguidor de linea
  * 
@@ -17,6 +19,7 @@
 #define SHIELD_ADAFRUIT
 //***********************************
 #ifdef SHIELD_ADAFRUIT
+#include <AFMotor.h>
 #include "ShieldMotor.h"
 #endif
 //*************************************************
