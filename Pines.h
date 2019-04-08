@@ -9,6 +9,7 @@
  #pragma once
 /********************************************************
  * Definiciones para las shield disponibles
+ * Comentar la linea define para usar o no la shield
  * 
  * ShieldMotor adafruit 0
  * Shield SENA TB6612   1
@@ -19,19 +20,23 @@
 #define SHIELD_ADAFRUIT
 //***********************************
 #ifdef SHIELD_ADAFRUIT
+
 #include <AFMotor.h>
 #include "ShieldMotor.h"
-#endif  
+#include "DIRl293.h"
+#endif
 
-//#define Shield SENA TB6612
+
+//****************************************
+//#define SHIELD_SENA 
 //**************************
+#ifdef SHIELD_SENA 
 
+#include <SparkFun_TB6612.h>
+#include "Shield_tb6612.h"
+#include "DIRTB6612.h"
 
-
-
-
-/************************************************/
-
+#endif
 
 //*************************************************
 // Tiempos de tareas

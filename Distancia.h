@@ -12,6 +12,7 @@ void SetupDist()
 
 float dist()
 {
+  
       digitalWrite(TRIGGER,LOW); /* Por cuestiÃ³n de estabilizaciÃ³n del sensor*/
       delayMicroseconds(5);
       // lanzamos un pequeÃ±o pulso para activar el sensor
@@ -31,5 +32,5 @@ float dist()
 
 
 return  distancia = (distancia+distAct)/2;
-      
+      Serial.println(dist());
 }            

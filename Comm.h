@@ -21,11 +21,13 @@ Serial.begin(BAUD_RATE);     //Configura velocidad de comunicacion, inicializa p
 void serialEvent() 
 { s="";   //incia la variable en vacio
   while (Serial.available())          //Mientras haya datos disponibles en el puerto serial
-  {   char c = Serial.read();         //guarda en c lo que tiene el puerto serial
+  {   
+       char c = Serial.read();         //guarda en c lo que tiene el puerto serial
       while ( c != '\n' )            //Hasta que el caracter sea intro
         {     s = s + c ;             //concatenamos c con lo que tenia s
               delay(1);               //espera 1 ms
               c = Serial.read();      //guarda en c lo que tiene el puerto serial
+              
         }
   }
     if ( s.startsWith("sp="))          //Si la cadena s inicia con "sp="
@@ -46,4 +48,5 @@ void serialEvent()
     {
     Serial.println(dist());           // el pin invierte su estado
     }
+    
 }

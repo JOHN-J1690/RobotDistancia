@@ -1,4 +1,5 @@
- /* *******************************************************************
+  
+  /* *******************************************************************
  *  Planificador de tareas, basado en el trabajo de:
  *  
  *  http://www.jovenescientificos.es/programacion-asincrona-de-arduino/
@@ -31,18 +32,11 @@ unsigned long int T =0;     // Tiempo total (microsegundos)
 unsigned long int ts1;   // Tiempo parcial (tarea 1)
 unsigned long int t01;   // Tiempo de la ultima ejecucion
 
- // Tarea 2: Sensor Ultrasonido
+ // Tarea 2: Control PID
 unsigned long int ts2;   // Tiempo parcial (tarea 1)
 unsigned long int t02;   // Tiempo de la ultima ejecucion
 
 // -- Funciones de definicion de tareas ------------------
-
-
-
-
-
-//--------------------------------------------------------
- 
 
 // -- Inicializacion -------------------------------------
  
@@ -56,7 +50,7 @@ void setup() {
   SetupLED();
   SetupDist();
   SetupComm();
-  SetupMOTOR();
+//  SetupMOTOR();
 } 
  
 // -- Bucle principal ------------------------------------
@@ -74,7 +68,7 @@ void loop() {
   // Temporizacion tarea medicion de distancia
   ts2 = T - t02;
   if (ts2 >= Ts2) {
-    TareaPID();//tareaMOTOR();              // en este espacio se hace la llamada a la tarea de acuerdo a
+    TareaPID();             // en este espacio se hace la llamada a la tarea de acuerdo a
     t02 = T;                  // la configuración de tiempos Ts2
   }
 }
